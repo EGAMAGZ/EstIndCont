@@ -139,4 +139,4 @@ cython_debug/
 
 # Custom Files
 .idea/
-media/
+media/*.*
