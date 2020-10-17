@@ -1,13 +1,11 @@
 from django.db import models
-
+from django.utils.text import slugify
+from django.urls import reverse
 
 from ckeditor.fields import RichTextField
 
 
 # Create your models here.
-from django.utils.text import slugify
-
-
 class Unity(models.Model):
     number = models.IntegerField('Numero de Unidad', unique=True, default=1)
     name = models.CharField('Nombre de Unidad', max_length=120)
@@ -44,6 +42,9 @@ class UnityContent(models.Model):
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
         super().save(*args, **kwargs)
+
+    def get_absolute_url(self):
+        return reverse('unity-content', kwargs={'topic_slug':self.slug, 'unity_slug': self.unity.slug})
 
     def __str__(self):
         return self.title

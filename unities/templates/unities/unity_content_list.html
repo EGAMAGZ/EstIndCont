@@ -1,0 +1,7 @@
+<h1>Lista de Contenido de Unidad</h1>
+
+{% for element in content_list %}
+    <a href="{{ element.get_absolute_url }}">{{ element.title }}</a>
+{% empty %}
+    <h2>No contenido</h2>
+{% endfor %}
