@@ -1,1 +1,1 @@
-web: gunicorn kiame.wsgi --logfile -
+web: gunicorn kiame.wsgi --log-file -
