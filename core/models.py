@@ -14,4 +14,4 @@ class TeamMember(models.Model):
         ordering=["-user"]
 
     def __str__(self):
-        return f"{self.surname},{self.name}"
+        return self.user.get_full_name()

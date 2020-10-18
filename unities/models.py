@@ -1,8 +1,10 @@
 from django.db import models
 from django.utils.text import slugify
 from django.urls import reverse
+from django.contrib.auth.models import User
 
 from ckeditor.fields import RichTextField
+from core.models import TeamMember
 
 
 # Create your models here.
@@ -27,12 +29,14 @@ class Unity(models.Model):
 
 
 class UnityContent(models.Model):
+    header_img = models.ImageField('Imagen Encabezado', upload_to='header-img')
     title = models.CharField('Titulo', max_length=120)
     unity = models.ForeignKey(Unity, on_delete=models.CASCADE, verbose_name='Unidad', null=True)
     content = RichTextField('Contenido', blank=True, null=True)
     slug = models.SlugField('Slug', blank=True)
     created = models.DateField(auto_now_add=True)
     updated = models.DateField(auto_now=True)
+    created_by = models.ForeignKey(TeamMember, on_delete=models.SET_NULL, null=True)
 
     class Meta:
         verbose_name = 'Contenido de la Unidad'
