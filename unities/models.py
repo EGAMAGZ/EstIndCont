@@ -34,8 +34,8 @@ class UnityContent(models.Model):
     unity = models.ForeignKey(Unity, on_delete=models.CASCADE, verbose_name='Unidad', null=True)
     content = RichTextField('Contenido', blank=True, null=True)
     slug = models.SlugField('Slug', blank=True)
-    created = models.DateField(auto_now_add=True)
-    updated = models.DateField(auto_now=True)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
     created_by = models.ForeignKey(TeamMember, on_delete=models.SET_NULL, null=True)
 
     class Meta:

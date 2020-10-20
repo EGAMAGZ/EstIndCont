@@ -1,3 +1,9 @@
-<h1>{{ content.title }}</h1>
+{% load humanize %}
 
+<h1>{{ content.title }}</h1>
+<div>
+    <img src="{{ content.created_by.profile_img.url }}" height=52 width=52>
+    <p>Usuario: {{ content.created_by.user.get_full_name }}</p>
+    <p>Modificado: {{ content.updated|naturaltime }}<p>
+</div>
 {{ content.content|safe }}
