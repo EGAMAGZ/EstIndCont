@@ -1,8 +1,8 @@
 from django.urls import path
 
-from .views import unity_list_content,unity_content
+from .views import UnityContentView, UnityListContent
 
 urlpatterns = [
-    path('', unity_list_content, name='unity-content-list'),
-    path('<slug:topic_slug>/', unity_content, name='unity-content')
+    path('', UnityListContent.as_view(), name='unity-content-list'),
+    path('<slug:topic_slug>/', UnityContentView.as_view(), name='unity-content')
 ]
