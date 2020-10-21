@@ -21,4 +21,4 @@ class UnityContentView(View):
 
     def get(self, request, unity_slug, topic_slug,*args,**kwargs) -> HttpResponse:
         content = UnityContent.objects.get(slug=topic_slug)
-        return render(request, self.template_name, {'content':content, 'unity': unity_slug})
+        return render(request, self.template_name, {'content':content})
