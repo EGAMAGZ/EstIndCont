@@ -29,7 +29,8 @@ class Unity(models.Model):
 
 
 class UnityContent(models.Model):
-    header_img = models.ImageField('Imagen Encabezado', upload_to='header-img')
+    header_img = models.ImageField('Imagen en encabezado', upload_to='header-img')
+    description = models.TextField('Descripcion', blank=True, null=True)
     title = models.CharField('Titulo', max_length=120)
     unity = models.ForeignKey(Unity, on_delete=models.CASCADE, verbose_name='Unidad', null=True)
     content = RichTextField('Contenido', blank=True, null=True)
