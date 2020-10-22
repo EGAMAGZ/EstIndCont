@@ -1,7 +1,11 @@
 <h1>Lista de Contenido de Unidad</h1>
 
-{% for element in content_list %}
-    <a href="{{ element.get_absolute_url }}">{{ element.title }}</a>
+{% for content in content_list %}
+    <div>
+        <img src="{{ content.header_img.url }}" height=124 width=72>
+        <a href="{{ content.get_absolute_url }}">{{ content.title }}</a>
+        <p> {{ content.description }} </p>
+    </div>
 {% empty %}
     <h2>No contenido</h2>
 {% endfor %}
