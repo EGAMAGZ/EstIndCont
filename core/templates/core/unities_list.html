@@ -1,10 +1,11 @@
 <h1>Lista de Unidades</h1>
 
-
+<div>
 {% for unity in unities_list %}
     <a href="{% url 'unity-content-list' unity.slug %}"><b>Unidad {{ unity.number }}</b> {{ unity.name }}</a>
 {% empty %}
     <p>NO hay unidades</p>
 {% endfor %}
+</div>
 
 <a href="{% url 'team-members' %}">Equipo</a>
