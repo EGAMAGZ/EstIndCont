@@ -1,11 +1,14 @@
+{% extends 'core/base.html' %}
+{% block content %}
 <h1>Lista de Contenido de Unidad</h1>
 
 {% for content in content_list %}
     <div>
-        <img src="{{ content.header_img.url }}" height=124 width=72>
+        <img src="{{ content.header_img.url }}" height=72 width=124>
         <a href="{{ content.get_absolute_url }}">{{ content.title }}</a>
         <p> {{ content.description }} </p>
     </div>
 {% empty %}
     <h2>No contenido</h2>
 {% endfor %}
+{% endblock %}
