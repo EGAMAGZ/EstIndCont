@@ -31,7 +31,8 @@
             </nav>
             <!-- CONTENT -->
             <div id="content-container" class="container">
-            <a href="{% url 'home' %}">Regresar al home</a>
+            <p><a href="{% url 'home' %}">Regresar al home</a></p>
+            <a href="{% url 'team-members' %}">Integrantes de equipo</a>
             <p style="background:red;color:white">PAGINA EN DESARROLLO: Por cada redireccionamiento, es necesario dar click a la flecha del banner para ver el contenido.</p>
                     {% block content %}{% endblock %}
             </div>
