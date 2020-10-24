@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'core.apps.CoreConfig',
     'unities.apps.UnitiesConfig',
     'ckeditor',
-    'django_cleanup.apps.CleanupConfig',
+    'ckeditor_uploader',
+    'django_cleanup.apps.CleanupConfig'
 ]
 
 MIDDLEWARE = [
@@ -150,3 +151,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # CKEditor Settings
 
 CKEDITOR_ALLOW_NONIMAGE_FILES = False
+CKEDITOR_UPLOAD_PATH = 'ckeditor_uploads/'

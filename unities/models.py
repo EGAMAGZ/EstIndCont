@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 from ckeditor.fields import RichTextField
 from core.models import TeamMember
-
+from ckeditor_uploader.fields import RichTextUploadingField
 
 # Create your models here.
 class Unity(models.Model):
@@ -33,7 +33,7 @@ class UnityContent(models.Model):
     description = models.TextField('Descripcion', blank=True, null=True)
     title = models.CharField('Titulo', max_length=120)
     unity = models.ForeignKey(Unity, on_delete=models.CASCADE, verbose_name='Unidad', null=True)
-    content = RichTextField('Contenido', blank=True, null=True)
+    content = RichTextUploadingField('Contenido', blank=True, null=True)
     slug = models.SlugField('Slug', blank=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
