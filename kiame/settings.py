@@ -26,7 +26,7 @@ SECRET_KEY = ')=x3_*a7fuq76@6-2nnb8n9#fy@weqo4r!eq$!evh%px*hsx_6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'core.apps.CoreConfig',
     'unities.apps.UnitiesConfig',
     'ckeditor',
+    'ckeditor_uploader',
     'django_cleanup.apps.CleanupConfig'
 ]
 
@@ -133,3 +134,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # CKEditor Settings
 
 CKEDITOR_ALLOW_NONIMAGE_FILES = False
+CKEDITOR_UPLOAD_PATH = 'ckeditor_uploads/'
