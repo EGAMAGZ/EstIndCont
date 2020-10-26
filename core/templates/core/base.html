@@ -34,7 +34,9 @@
             <div id="content-container" class="container">
             <p><a href="{% url 'home' %}">Regresar al home</a></p>
             <a href="{% url 'team-members' %}">Integrantes de equipo</a>
-            <p style="background:red;color:white">PAGINA EN DESARROLLO: Por cada redireccionamiento, es necesario dar click a la flecha del banner para ver el contenido.</p>
+            <div class="alert alert-danger">
+                <p>PAGINA EN DESARROLLO: Por cada redireccionamiento, es necesario dar click a la flecha del banner para ver el contenido.</p>
+            </div>
                     {% block content %}{% endblock %}
             </div>
             <!-- FOOTER -->

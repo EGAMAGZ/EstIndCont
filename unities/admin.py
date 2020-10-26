@@ -11,7 +11,7 @@ class UnityAdmin(admin.ModelAdmin):
 
 
 class UnityContentAdmin(admin.ModelAdmin):
-    readonly_fields = ('created', 'updated', 'slug', 'created_by')
+    readonly_fields = ('created', 'updated', 'slug')
 
     def save_model(self, request: Any, obj: Any, form: Any, change: Any) -> None:
         user = TeamMember.objects.get(user=request.user)
