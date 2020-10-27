@@ -7,7 +7,7 @@
 <div>
     <img src="{{ content.created_by.profile_img.url }}" height=52 width=52>
     <p>Usuario: {{ content.created_by.user.get_full_name }}</p>
-    <p>Modificado: {{ content.updated|naturaltime }}<p>
+    {% comment %} <p>Modificado: {{ content.updated|naturaltime }}<p> {% endcomment %}
 </div>
 <div style="overflow-y:hidden">
 {{ content.content|safe }}
