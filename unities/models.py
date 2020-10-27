@@ -17,7 +17,7 @@ class Unity(models.Model):
     class Meta:
         verbose_name = 'Unidad'
         verbose_name_plural = 'Unidades'
-        ordering = ["-number"]
+        ordering = ["number"]
 
     def save(self, *args, **kwargs):
         slug_text = f'unidad {self.number}'
