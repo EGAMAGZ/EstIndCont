@@ -3,13 +3,21 @@
 {% block content %}
 <h1>Miembros de Equipo</h1>
 
-{% for team_member in object_list %}    
-    <img src="{{ team_member.profile_img.url }}" height=52 witdh=52 >
-    <div>
-        <p>{{ team_member.user.get_full_name }}</p>
-        <p>Boleta: {{ team_member.id_number }}</p>
-        <p>Rol: {{ team_member.role }}</p>
+{% for team_member in object_list %}
+<div class="card mb-3" style="max-width: 540px;">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src="{{ team_member.profile_img.url }}" class="card-img" alt="...">
     </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{ team_member.user.get_full_name }}</h5>
+        <p class="card-text">Boleta: {{ team_member.id_number }}</p>
+        <p class="card-text"><small class="text-muted">{{ team_member.role }}</small></p>
+      </div>
+    </div>
+  </div>
+</div>
 
 {% empty %}
     <h2> No hay equipos</h2>
