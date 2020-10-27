@@ -1,12 +1,15 @@
-{% extends 'core/base.html' %}
-
-{% block content %}
+{% extends 'core/base.html' %} {% block content %}
 <h1>Lista de Unidades</h1>
 
-
-{% for unity in unities_list %}
-    <a href="{% url 'unity-content-list' unity.slug %}"><b>Unidad {{ unity.number }}</b> {{ unity.name }}</a>
-{% empty %}
-    <p>NO hay unidades</p>
-{% endfor %}
+<div class="list-group">
+  {% for unity in unities_list %}
+  <a
+    href="{% url 'unity-content-list' unity.slug %}"
+    class="list-group-item list-group-item-action"
+    ><b>Unidad {{ unity.number }}</b> {{ unity.name }}</a
+  >
+  {% empty %}
+  <a href="#"> No hay Unidades</a>
+  {% endfor %}
+</div>
 {% endblock %}
