@@ -22,7 +22,7 @@
         </div>
         <div id="scroll-arrow">╲╱</div>
 
-        <div id="page-container" class="hide">
+        <div id="page-container" class="{% if page_visited %}show{% else %}hide{% endif %}">
             <!-- NAVBAR -->
             <nav id="navbar" class="navbar navbar-dark bg-dark">
                 <img src="{% static 'core/img/LOGO KIAME HEADER.svg' %}" id="showWelcome" class="brand" />

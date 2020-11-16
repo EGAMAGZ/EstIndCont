@@ -2,6 +2,7 @@
 <h1>Lista de Unidades</h1>
 
 <div class="list-group">
+
   {% for unity in unities_list %}
   <a
     href="{% url 'unity-content-list' unity.slug %}"
