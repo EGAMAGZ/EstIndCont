@@ -2,7 +2,12 @@
 <h1>Lista de Unidades</h1>
 
 <div class="list-group">
-
+  {% for info in menu_elements %}
+    <a href="{% url 'unity-content-list' info.slug %}">{{ info.unity }}</a>
+    {% for content in info.content %}
+    <h5><a href='{{ content.url }}'>{{ content.title }}</a></h5>
+    {% endfor %}
+  {% endfor %}
   {% for unity in unities_list %}
   <a
     href="{% url 'unity-content-list' unity.slug %}"

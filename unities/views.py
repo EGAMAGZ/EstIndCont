@@ -1,6 +1,3 @@
-from django.http.response import HttpResponse
-from django.shortcuts import render
-from django.utils.text import slugify
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
 from django.db.models import QuerySet
