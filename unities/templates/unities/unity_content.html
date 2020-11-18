@@ -9,7 +9,7 @@
     <p>Usuario: {{ content.created_by.user.get_full_name }}</p>
     {% comment %} <p>Modificado: {{ content.updated|naturaltime }}<p> {% endcomment %}
 </div>
-<div style="overflow-y:hidden">
+<div>
 {{ content.content|safe }}
 </div>
 

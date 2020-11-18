@@ -17,6 +17,5 @@ class VisitContextMixin(object):
             self.request.session[self.SESSION_NAME] = False
 
         context[self.CONTEXT_NAME] = self.request.session[self.SESSION_NAME]
-        print(context)
-
+# https://docs.djangoproject.com/en/3.1/ref/models/querysets/#in-bulk
         return context

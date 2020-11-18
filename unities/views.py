@@ -1,6 +1,7 @@
 from django.http.response import HttpResponse
 from django.shortcuts import render
-from django.views.generic import TemplateView
+from django.utils.text import slugify
+from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
 from django.db.models import QuerySet
 
@@ -18,11 +19,9 @@ class UnityListContent(VisitContextMixin, ListView):
 
         return UnityContent.objects.filter(unity=unity)
 
+class UnityContentView(VisitContextMixin, DetailView):
 
-class UnityContentView(VisitContextMixin, TemplateView):
-    
     template_name = 'unities/unity_content.html'
-
-    def get(self, request, unity_slug, topic_slug, *args, **kwargs) -> HttpResponse:
-        content = UnityContent.objects.get(slug=topic_slug)
-        return render(request, self.template_name, {'content': content})
+    context_object_name = 'content'
+    model = UnityContent
+    slug_url_kwarg = 'topic_slug'
