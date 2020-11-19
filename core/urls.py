@@ -1,8 +1,8 @@
 from django.urls import path
 
-from .views import UnityList, TeamMembersList
+from .views import UnityList, TeamMembersList, Home
 
 urlpatterns = [
-    path('', UnityList.as_view(), name='home'),
+    path('', Home.as_view(), name='home'),
     path('team/', TeamMembersList.as_view(), name='team-members')
 ]

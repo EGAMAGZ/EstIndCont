@@ -8,7 +8,7 @@ class VisitContextMixin(object):
     __VISITED_SESSION: Final = 'page_visited_session'
     __MENU_INFO_CONTEXT: Final = 'menu_elements'
 
-    def get_context_data(self, *, object_list=None, **kwargs):
+    def get_context_data(self, *, object_list=None, **kwargs: Any) -> Dict[str, Any]:
         context = super(VisitContextMixin, self).get_context_data(object_list=object_list, **kwargs)
 
         try:
