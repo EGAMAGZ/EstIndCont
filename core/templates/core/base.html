@@ -1,61 +1,61 @@
 <!DOCTYPE html>
 <html lang="es">
-
+{% load static %}
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    {% comment %} TODO: PASS TITLE AND FAVICON TO HTML REPOSITORY {% endcomment %}
-    <title>KIAME</title>
-    {% load static %}
-    <link rel="icon" type="image/svg+xml" href="{% static 'core/img/LOGO KIAME HEADER.svg' %}" sizes="any">
+    <title>KIAME {% block path %}{% endblock %}</title>
+
+    <link rel="icon" type="image/svg+xml" href="{% static 'img/LOGO_KIAME.svg' %}" sizes="any" />
     <!-- CSS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"
+    async></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous" />
 
-    <link rel="stylesheet" href="{% static 'core/css/homepage.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/homepage.css' %}" />
+    {% block css %}{% endblock  %}
 </head>
 
 <body>
+    {% include 'core/sidebar.html' %}
     <div id="page-welcome" class="d-flex position-relative">
         <!-- WELCOME -->
         <div id="welcome-container">
-            <img src="{% static 'core/img/LOGO KIAME HEADER.svg' %}" alt="" />
+            <img src="{% static 'img/LOGO_KIAME.svg' %}" alt="KIAME Logo" async="on" width="300" height="300" />
         </div>
         <div id="scroll-arrow">╲╱</div>
 
-        <div id="page-container" class="hide">
+
+        <!-- PAGE CONTAINER -->
+        <div id="page-container" class="{% if page_visited %}show{% else %}hide{% endif %}">
             <!-- NAVBAR -->
-            <nav id="navbar" class="navbar navbar-dark bg-dark">
-                <img src="{% static 'core/img/LOGO KIAME HEADER.svg' %}" id="showWelcome" class="brand" />
-                <button class="navbar-toggler" type="button" aria-expanded="false" aria-label="Toggle navigation">
+            <nav id="navbar" class="navbar navbar-dark bg-dark d-flex align-items-center">
+                <img src="{% static 'img/LOGO_KIAME.svg' %}" id="showWelcome" class="brand" alt="KIAME Logo" async="on" />
+
+                <button id="menuToogle" class="navbar-toggler" type="button" aria-expanded="false"
+                    aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </nav>
             <!-- CONTENT -->
-            <div id="content-container" class="container">
-            <p><a href="{% url 'home' %}">Regresar al home</a></p>
-            <a href="{% url 'team-members' %}">Integrantes de equipo</a>
-            <div class="alert alert-danger">
-                <p>PAGINA EN DESARROLLO: Por cada redireccionamiento, es necesario dar click a la flecha del banner para ver el contenido.</p>
-                <p><b>Cualquier error favor de avisarlo</b></p>
-            </div>
-                    {% block content %}{% endblock %}
+            <div id="page-content-container">
+                {% block content %}
+                {% endblock  %}
             </div>
             <!-- FOOTER -->
-            <!-- <footer class="d-flex">
-          <img src="img/LOGO KIAME HEADER.svg" alt=""/>
-        </footer> -->
+            <footer class="d-flex">
+                <img src="{% static 'img/LOGO_KIAME.svg' %}" alt="" />
+            </footer>
         </div>
     </div>
 
+    <script src="{% static 'js/homepage.js' %}"></script>
     <!-- jQuery and JS bundle w/ Popper.js -->
-    <script src="{% static 'core/js/homepage.js' %}"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
-        crossorigin="anonymous"></script>
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"
+        async></script>
 </body>
 
 </html>

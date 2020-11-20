@@ -1,16 +1,27 @@
 {% extends 'core/base.html' %}
+
 {% load humanize %}
+{% load static %}
+{% block path %}| {{ content.title }}{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/content.css' %}" />
+{% endblock %}
 
 {% block content %}
-<img src="{{ content.header_img.url }}" height=144 width=248>
-<h1>{{ content.title }}</h1>
-<div>
-    <img src="{{ content.created_by.profile_img.url }}" height=52 width=52>
-    <p>Usuario: {{ content.created_by.user.get_full_name }}</p>
-    <p>Modificado: {{ content.updated|naturaltime }}<p>
-</div>
-<div style="overflow-y:hidden">
-{{ content.content|safe }}
-</div>
+<img src="{{ content.header_img.url }}" class="cover-image" />
+<div id="content-container" class="container">
+    <h1 id="content-title">{{ content.title }}</h1>
 
+    <div id="content-header" class="d-flex flex-row align-items-center w-100">
+    <div class="profile-container mr-2">
+        <img src="{{ content.created_by.profile_img.url }}" height="32" width="32" class="profile-img" />
+    </div>
+    <span class="mr-2"><b>{{ content.created_by.user.get_full_name }}</b></span>
+    <span>Modificado hace {{ content.updated|naturaltime }}</span>
+    </div>
+    <div id="content-article">
+        {{ content.content|safe }}
+    </div>
+</div>
 {% endblock %}

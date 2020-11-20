@@ -1,0 +1,21 @@
+<div id="sideBar" class="sidenav sidenav-hide">
+    <ul>
+        <li><button id="closeNav"><span class="mr-2">&times;</span>Cerrar</button></li>
+        {% for element in menu_elements %}
+            <li class="{% if element.content %}dropdown{% endif %}">
+                <a href="{% url 'unity-content-list' element.slug %}">Unidad Tematica {{ element.unity_number }}{% if element.content %}<span>&rsaquo;</span>{% endif %}</a>
+                <ul>
+                    {% for content in element.content %}
+                    <li><a href="{{ content.url }}">{{ content.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </li>
+        {% endfor %}
+        <li>
+            <a href="{% url 'team-members' %}">Integrantes de Equipo</a>
+        </li>
+        <li>
+            <a href="{% url 'home' %}">Regresar al Inicio</a>
+        </li>
+    </ul>
+</div>

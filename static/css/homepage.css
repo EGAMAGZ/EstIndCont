@@ -1,0 +1,199 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Lato";
+  src: url("../fonts/Lato-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Lato Black";
+  src: url("../fonts/Lato-Black.ttf") format("truetype");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+}
+
+#page-welcome {
+  background: transparent url("../img/FONDO_IMG.png") no-repeat center;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+#scroll-arrow {
+  animation: bounce 1s ease infinite;
+  bottom: 2rem;
+  color: #fff;
+  font-size: 2rem;
+  height: 4rem;
+  left: 50%;
+  letter-spacing: -1px;
+  line-height: 4rem;
+  margin-left: -3rem;
+  opacity: 0.8;
+  position: absolute;
+  text-align: center;
+  width: 6rem;
+}
+
+#scroll-arrow:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+#page-welcome #welcome-container img {
+  width: 30vw;
+  height: 30vh;
+}
+
+.sidenav {
+  width: 250px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: #262424;
+  z-index: 10;
+}
+.sidenav-show {
+  display: block;
+}
+.sidenav-hide {
+  display: none;
+}
+.sidenav ul {
+  position: relative;
+  list-style-type: none;
+}
+.sidenav ul li {
+  cursor: pointer;
+}
+.sidenav ul li a {
+  display: flex;
+  color: #fff;
+  align-items: center;
+  font-family: "Lato Black", sans-serif;
+  font-size: 1.15em;
+  text-decoration: none;
+  text-transform: capitalize;
+  padding: 10px 30px;
+  height: 50px;
+  transition: 0.5s ease;
+}
+.sidenav ul li a:hover {
+  background: white;
+  color: #262424;
+}
+.sidenav ul li button {
+  width: 100%;
+  display: flex;
+  color: #fff;
+  align-items: center;
+  font-family: "Lato Black", sans-serif;
+  font-size: 1.15em;
+  text-decoration: none;
+  text-transform: capitalize;
+  padding: 10px 30px;
+  height: 50px;
+  background: transparent;
+  border: 0 transparent;
+}
+.sidenav ul li button span {
+  font-size: 1.5em;
+}
+.sidenav ul ul {
+  position: absolute;
+  left: 250px;
+  width: 450px;
+  font-size: 0.75em;
+  top: 0;
+  display: none;
+  background: #db3149;
+}
+.sidenav ul .dropdown:hover ul {
+  display: initial;
+}
+.sidenav ul .dropdown:hover ul a:hover {
+  background: #262424;
+  color: white;
+}
+
+#page-container {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 5;
+  background: #fff;
+  transition: 0.8s all ease;
+}
+
+#page-container #navbar {
+  background: transparent linear-gradient(-90deg, #db3149 0%, #803266 45%, #483843 62%, #131615 100%) 0% 0% no-repeat padding-box !important;
+}
+
+#navbar {
+  position: relative !important;
+}
+
+.brand {
+  position: absolute;
+  left: 50%;
+  margin-left: -50px !important;
+  /* 50% of your logo width */
+  display: block;
+  width: 95px;
+  height: 54px;
+}
+
+#showWelcome {
+  cursor: pointer;
+}
+
+.hide {
+  top: 100%;
+}
+
+.show {
+  top: 0%;
+  overflow-y: visible;
+  overflow-x: hidden;
+}
+
+#page-content-container {
+  display: block;
+  font-family: "Roboto", sans-serif;
+  min-height: 100%;
+}
+
+footer {
+  background: #1b0310 0% 0% no-repeat padding-box;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-top: 10px;
+}
+
+footer::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 10px;
+  background: transparent linear-gradient(-90deg, #db3149 0%, #803266 45%, #483843 62%, #131615 100%) 0% 0% no-repeat padding-box;
+  top: -10px;
+}
+
+@keyframes bounce {
+  50% {
+    transform: translateY(-50%);
+  }
+}
+
+/*# sourceMappingURL=homepage.css.map */

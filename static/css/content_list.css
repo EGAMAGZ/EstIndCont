@@ -1,0 +1,64 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Lato";
+  src: url("../fonts/Lato-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Lato Black";
+  src: url("../fonts/Lato-Black.ttf") format("truetype");
+}
+.unity-header {
+  margin-top: 16px;
+  position: relative;
+}
+.unity-img {
+  display: block;
+  object-fit: cover;
+  width: 100%;
+  height: 35vh;
+}
+.unity-caption {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  padding: 20px;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-size: 1em;
+  background: transparent linear-gradient(rgba(1, 1, 1, 0.7), rgba(1, 1, 1, 0.3));
+}
+.unity-title {
+  font-family: "Lato Black", sans-serif;
+  font-size: 1.5rem;
+}
+
+#contentContainer {
+  margin-top: 2em;
+}
+#contentContainer .card {
+  border-radius: 0;
+}
+#contentContainer .card-title {
+  font-family: "Lato Black", sans-serif;
+}
+#contentContainer .card-text {
+  text-align: justify;
+}
+#contentContainer .profile-container {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+}
+#contentContainer .profile-img {
+  display: inline;
+  margin: 0 auto;
+  height: 100%;
+  width: auto;
+}
+
+/*# sourceMappingURL=content_list.css.map */

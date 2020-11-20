@@ -1,14 +1,60 @@
 {% extends 'core/base.html' %}
-{% block content %}
+
+{% load static %}
+
+{% block path %}| Unidad Tematica {{ unity.number }}{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/content_list.css' %}" />
+{% endblock  %}
+
+{% comment %} {% block content %}
 <h1>Lista de Contenido de Unidad</h1>
 
 {% for content in content_list %}
-    <div>
-        <img src="{{ content.header_img.url }}" height=72 width=124>
-        <a href="{{ content.get_absolute_url }}">{{ content.title }}</a>
-        <p> {{ content.description }} </p>
-    </div>
+<div>
+  <img src="{{ content.header_img.url }}" height="72" width="124" />
+  <a href="{{ content.get_absolute_url }}">{{ content.title }}</a>
+  <p>{{ content.description }}</p>
+</div>
 {% empty %}
+<h2>No contenido</h2>
+{% endfor %} {% endblock %} {% endcomment %}
+
+{% block content %}
+<div class="container">
+  <div class="unity-header">
+    <img class="unity-img" src="{% static 'img/motherboard-wallpaper.jpg' %}" alt="" />
+    <div class="unity-caption">
+      <span class="unity-title">Unidad Tematica {{ unity.number }}</span>
+      <p>
+        {{ unity.name }}
+      </p>
+    </div>
+  </div>
+
+  <div id="contentContainer" class="row row-cols-1 row-cols-md-3">
+    {% for content in content_list %}
+    <div class="col mb-4">
+      <div class="card">
+        <img src="{{ content.header_img.url }}" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">
+            <a style="color:black" class="text-decoration-none" href="{{ content.get_absolute_url }}">{{ content.title }}</a>
+          </h5>
+          <p class="card-text">{{ content.description }}</p>
+          <div class="d-flex flex-row align-items-center w-100">
+            <div class="profile-container mr-2">
+              <img src="{{ content.created_by.profile_img.url }}" height="32" width="32" class="profile-img" />
+            </div>
+            <span class="text-truncate"><b>{{ content.created_by.user.get_full_name }}</b></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% empty %}
     <h2>No contenido</h2>
-{% endfor %}
+    {% endfor %}
+  </div>
+</div>
 {% endblock %}
