@@ -1,0 +1,21 @@
+{% extends 'core/base.html' %}
+
+{% block path %}| Inicio{% endblock %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}" />
+{% endblock  %}
+
+{% block content %}
+<div class="jumbotron text-center">
+    <h1>Equipo #7: KIAME</h1>
+    <p>Estudio de La Industria del Software Continental</p>
+</div>
+<div class="container">
+    <div class="alert alert-danger" role="alert">
+        Esta pagina sigue en desarrollo
+    </div>
+</div>
+{% endblock %}

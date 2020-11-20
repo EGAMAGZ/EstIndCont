@@ -33,14 +33,14 @@ class VisitContextMixin(object):
                     'title': content.title
                 })
             menu_info.append({
-                'unity': unity.name,
+                'unity_number': unity.number,
                 'slug': unity.slug,
                 'content': list_content_info
             })
         return menu_info
 # SAMPLE OF USAGE
 # {% for info in menu_elements %}
-#     <a href="{% url 'unity-content-list' info.slug %}">{{ info.unity }}</a>
+#     <a href="{% url 'unity-content-list' info.slug %}">{{ info.unity_number }}</a>
 #     {% for content in info.content %}
 #     <h5><a href='{{ content.url }}'>{{ content.title }}</a></h5>
 #     {% endfor %}
