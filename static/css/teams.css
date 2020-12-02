@@ -1,0 +1,11 @@
+#team-header {
+  height: 80vh;
+  background-image: url("../img/team_members.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  clip-path: polygon(100% 0, 100% 90%, 69% 100%, 0 85%, 0 0);
+  background-attachment: fixed;
+  margin-bottom: 50px;
+}
+
+/*# sourceMappingURL=teams.css.map */
