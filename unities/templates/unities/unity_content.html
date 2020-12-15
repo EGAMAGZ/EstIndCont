@@ -10,16 +10,19 @@
 
 {% block content %}
 <img src="{{ content.header_img.url }}" class="cover-image" />
-<div id="content-container" class="container">
-    <h1 id="content-title">{{ content.title }}</h1>
+<div id="content-container" class="container-lg">
+      <h1 id="content-title">{{ content.title }}</h1>
 
-    <div id="content-header" class="d-flex flex-row align-items-center w-100">
-    <div class="profile-container mr-2">
-        <img src="{{ content.created_by.profile_img.url }}" height="32" width="32" class="profile-img" />
-    </div>
-    <span class="mr-2"><b>{{ content.created_by.user.get_full_name }}</b></span>
-    <span>Modificado hace {{ content.updated|naturaltime }}</span>
-    </div>
+      <div id="content-header" class="d-flex flex-row align-items-center w-100">
+        <div class="profile-container">
+          <img src="{{ content.created_by.profile_img.url }}" height="32" width="32" class="profile-img" />
+        </div>
+        <div class="col-md">
+          <span class=""><b>{{ content.created_by.user.get_full_name }}</b></span>
+          <span>Modificado {{ content.updated|naturaltime }}</span>
+        </div>
+      </div>
+
     <div id="content-article">
         {{ content.content|safe }}
     </div>

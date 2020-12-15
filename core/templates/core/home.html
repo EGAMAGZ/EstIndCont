@@ -9,13 +9,90 @@
 {% endblock  %}
 
 {% block content %}
-<div class="jumbotron text-center">
-    <h1>Equipo #7: KIAME</h1>
-    <p>Estudio de La Industria del Software Continental</p>
-</div>
-<div class="container">
-    <div class="alert alert-danger" role="alert">
-        Esta pagina sigue en desarrollo
+<!-- IMAGE HEADER -->
+<div id="headerContainer" class="text-center position-relative">
+    <img src="{% static 'img/canada-place.jpg' %}" alt="">
+    <div class="d-flex flex-column justify-content-center align-items-center position-absolute">
+        <h1>¡Bienvenido a Nuestra Pagina!</h1>
+        <h2>Somos el Equipo #7: KIAME</h2>
     </div>
+</div>
+
+<!-- HOME CONTENT -->
+<div id="homeContent" class="row">
+    <div id="tabContainer" class="col-lg-8">
+        <ul class="nav nav-tabs" id="tab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="greeting-tab" data-toggle="tab" href="#greeting"
+                    role="tab" aria-controls="greeting" aria-selected="true">Bienvenida</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="content-tab" data-toggle="tab" href="#content" role="tab"
+                    aria-controls="content" aria-selected="false">Contenido</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab"
+                    aria-controls="contact" aria-selected="false">Contacto</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="tabContent">
+            <div class="tab-pane fade show active" id="greeting" role="tabpanel"
+                aria-labelledby="greeting-tab">
+                <h2 class="text-capitalize">¡Buenas tardes Usuario!</h2>
+                <p class="text-justify">
+                    Espero que sea de su agrado nuestra pagina. Aqui podras encontrar contenido
+                    relacionado con el pais de Canada, estos son los temas que podras encontrar:
+                </p>
+                <ul class="text-capitalize">
+                    <li>Entorno empresarial</li>
+                    <li>Entorno Financiero</li>
+                    <li>Apoyos Nacionales e Internacionales de la Industria del Hardwar</li>
+                    <li>Inversión privada en la educación</li>
+                </ul>
+            </div>
+            <div class="tab-pane fade" id="content" role="tabpanel" aria-labelledby="content-tab">
+                <h2>Listado de Unidades Tematicas</h2>
+
+                <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action text-truncate">
+                        Interrelación entre Asociaciones y la Industria del Hardware
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis
+                        in</a>
+                    <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
+                    <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur
+                        ac</a>
+                    <a href="#" class="list-group-item list-group-item-action ">Vestibulum at eros</a>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                <p class="text-justify">
+                    Nosotros somos un equipo de 5 integrantes con diferentes roles
+                    cada uno desde investigacion de los temas, redacción del contenido de las paginas y
+                    el desarrollo de la plataforma web. Cualquier error, problema o duda con respecta a
+                    nuestra
+                    plataforma, favor de comunicarse con alguno de los integrantes de nuestro equipo.
+                </p>
+                <p><b>Nombre de Equipo:</b>KIAME</p>
+                <p><b>No, de Equipo:</b> 7</p>
+                <p><b>Secuencia:</b>1NM22</p>
+                <a href="{% url 'team-members' %}" class="btn btn-info">Ver Equipo</a>
+            </div>
+        </div>
+    </div>
+    <!-- LIST OF LAST CONTENT UPLOADED -->
+    <div id="lastContentContainer" class="col-lg-4">
+        <h2>Ultimo contenido agregado</h2>
+        <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action text-truncate">
+                Interrelación entre Asociaciones y la Industria del Hardware
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
+            <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
+            <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
+            <a href="#" class="list-group-item list-group-item-action ">Vestibulum at eros</a>
+        </div>
+    </div>
+
 </div>
 {% endblock %}

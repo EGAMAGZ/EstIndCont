@@ -14,12 +14,12 @@
 <div class="container" style="padding: auto;">
   <h1 class="text-center m-5">Integrantes de Equipo</h1>
   {% for team_member in team_members %}
-  <div class="card mb-4" style="max-width: 540px; max-height: 200px; margin-left: auto; margin-right: auto;">
+  <div class="card mb-4">
     <div class="row no-gutters">
-      <div class="col-md-4">
+      <div class="col-4">
         <img src="{{ team_member.profile_img.url }}" class="card-img" alt="...">
       </div>
-      <div class="col-md-8">
+      <div class="col-8">
         <div class="card-body">
           <h5 class="card-title">{{ team_member.user.get_full_name }}</h5>
           <p class="card-text">Boleta: {{ team_member.id_number }}</p>
