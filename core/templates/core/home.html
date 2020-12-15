@@ -3,6 +3,7 @@
 {% block path %}| Inicio{% endblock %}
 
 {% load static %}
+{% load core_tags %}
 
 {% block css %}
 <link rel="stylesheet" href="{% static 'css/home.css' %}" />
@@ -38,7 +39,7 @@
         <div class="tab-content" id="tabContent">
             <div class="tab-pane fade show active" id="greeting" role="tabpanel"
                 aria-labelledby="greeting-tab">
-                <h2 class="text-capitalize">¡Buenas tardes Usuario!</h2>
+                <h2 class="text-capitalize">¡{% time_greeting %} {% if not page_visited %}Nuevo{% endif %} Usuario!</h2>
                 <p class="text-justify">
                     Espero que sea de su agrado nuestra pagina. Aqui podras encontrar contenido
                     relacionado con el pais de Canada, estos son los temas que podras encontrar:

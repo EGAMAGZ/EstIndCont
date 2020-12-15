@@ -15,9 +15,10 @@ def time_greeting() -> str:
             Return the greeting, that will change with the actual hour
     """
     current_time = datetime.datetime.now(tz=pytz.timezone(str(settings.TIME_ZONE)))
+    print(current_time.hour)
     if current_time.hour < 12:
         return 'Buenos dias'
-    elif current_time.hour >= 12 and current_time < 18:
+    elif current_time.hour >= 12 and current_time.hour < 18:
         return 'Buenas tardes'
     else:
         return 'Buenas noches'
