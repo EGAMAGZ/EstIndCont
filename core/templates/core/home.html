@@ -55,15 +55,13 @@
                 <h2>Listado de Unidades Tematicas</h2>
 
                 <div class="list-group">
-                    <a href="#" class="list-group-item list-group-item-action text-truncate">
-                        Interrelación entre Asociaciones y la Industria del Hardware
+                    
+                    {% for element in menu_elements %}
+                    <a href="{% url 'unity-content-list' element.slug %}" class="list-group-item list-group-item-action text-truncate">
+                        {{ element.name }}
                     </a>
-                    <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis
-                        in</a>
-                    <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
-                    <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur
-                        ac</a>
-                    <a href="#" class="list-group-item list-group-item-action ">Vestibulum at eros</a>
+                    {% endfor %}
+
                 </div>
             </div>
             <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
@@ -85,13 +83,11 @@
     <div id="lastContentContainer" class="col-lg-4">
         <h2>Ultimo contenido agregado</h2>
         <div class="list-group">
-            <a href="#" class="list-group-item list-group-item-action text-truncate">
-                Interrelación entre Asociaciones y la Industria del Hardware
+            {% for post in last_posts %}
+            <a href="{{ post.get_absolute_url }}" class="list-group-item list-group-item-action text-truncate">
+                {{ post.title }}
             </a>
-            <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
-            <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
-            <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
-            <a href="#" class="list-group-item list-group-item-action ">Vestibulum at eros</a>
+            {% endfor %}
         </div>
     </div>
 
