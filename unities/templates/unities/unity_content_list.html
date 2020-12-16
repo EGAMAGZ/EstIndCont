@@ -13,7 +13,7 @@
 
 {% for content in content_list %}
 <div>
-  <img src="{{ content.header_img.url }}" height="72" width="124" />
+  <img src="{{ content.header_img.url }}" height="72" width="124" async="on"/>
   <a href="{{ content.get_absolute_url }}">{{ content.title }}</a>
   <p>{{ content.description }}</p>
 </div>
@@ -24,7 +24,7 @@
 {% block content %}
 <div class="container-lg">
   <div class="unity-header">
-    <img class="unity-img" src="{% static 'img/motherboard-wallpaper.jpg' %}" alt="" />
+    <img class="unity-img" src="{% static 'img/motherboard-wallpaper.jpg' %}" width="1110" height="332" alt="" loading="lazy"/>
     <div class="unity-caption">
       <span class="unity-title">Unidad Tematica {{ unity.number }}</span>
       <p>
@@ -36,7 +36,7 @@
   <div id="contentContainer" class="card-columns">
     {% for content in content_list %}
     <div class="card">
-      <img src="{{ content.header_img.url }}" class="card-img-top" alt="...">
+      <img src="{{ content.header_img.url }}" class="card-img-top" width="356" height="200" alt="..." loading="lazy">
       <div class="card-body">
         <h5 class="card-title">
           <a style="color:black" class="text-decoration-none" href="{{ content.get_absolute_url }}">{{ content.title }}</a>
@@ -44,7 +44,7 @@
         <p class="card-text">{{ content.description }}</p>
         <div class="d-flex flex-row align-items-center w-100">
           <div class="profile-container mr-2">
-            <img src="{{ content.created_by.profile_img.url }}" height="32" width="32" class="profile-img" />
+            <img src="{{ content.created_by.profile_img.url }}" height="32" width="32" class="profile-img" alt="..." loading="lazy"/>
           </div>
           <span class="text-truncate"><b>{{ content.created_by.user.get_full_name }}</b></span>
         </div>
