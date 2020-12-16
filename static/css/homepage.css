@@ -195,5 +195,19 @@ footer::before {
     transform: translateY(-50%);
   }
 }
+@media (max-width: 768px) {
+  .sidenav ul .dropdown span {
+    display: none;
+  }
+  .sidenav ul .dropdown:hover ul {
+    display: none;
+  }
+}
+@media (max-width: 576px) {
+  #page-welcome #welcome-container img {
+    width: 50vw;
+    height: 50vh;
+  }
+}
 
 /*# sourceMappingURL=homepage.css.map */

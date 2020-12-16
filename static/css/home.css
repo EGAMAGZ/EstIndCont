@@ -1,3 +1,99 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Lato";
+  src: url("../fonts/Lato-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Lato Black";
+  src: url("../fonts/Lato-Black.ttf") format("truetype");
+}
+#headerContainer {
+  width: 100vw;
+  height: 75vh;
+}
+#headerContainer img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  filter: brightness(50%) blur(1px);
+}
+#headerContainer div {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: white;
+  font-family: "Lato Black", sans-serif;
+  z-index: 1;
+}
 
+#homeContent {
+  margin-top: 1.5em;
+}
+#homeContent #lastContentContainer h2 {
+  font-family: "Lato", sans-serif;
+  text-align: center;
+}
+#homeContent #lastContentContainer div {
+  padding: 1.5em;
+  font-family: "Roboto", sans-serif;
+}
+#homeContent #tabContainer {
+  padding: 0 1em 0 2em;
+}
+#homeContent #tabContainer #tab {
+  font-family: "Lato Black", sans-serif;
+}
+#homeContent #tabContainer #tab .active {
+  color: #495057 !important;
+}
+#homeContent #tabContainer #tab a {
+  color: #db3149 !important;
+}
+#homeContent #tabContainer #tabContent {
+  font-family: "Roboto", sans-serif;
+}
+#homeContent #tabContainer #tabContent div {
+  padding: 1em;
+}
+#homeContent #tabContainer #tabContent #greeting ul {
+  margin-left: 1em;
+}
+
+@media (max-width: 992px) {
+  #homeContent #tabContainer {
+    padding: 0 1em 0 1em;
+  }
+}
+@media (max-width: 768px) {
+  #headerContainer {
+    height: 50vh;
+  }
+  #headerContainer div h1 {
+    font-size: 1.75rem;
+  }
+  #headerContainer div h2 {
+    font-size: 1.25rem;
+  }
+
+  #homeContent #tabContainer {
+    padding: auto;
+  }
+}
+@media (max-width: 576px) {
+  #headerContainer {
+    height: 30vh;
+  }
+  #headerContainer div h1 {
+    font-size: 1.25rem;
+  }
+  #headerContainer div h2 {
+    font-size: 1rem;
+  }
+}
 
 /*# sourceMappingURL=home.css.map */

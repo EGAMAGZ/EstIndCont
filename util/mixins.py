@@ -35,7 +35,8 @@ class VisitContextMixin(object):
             menu_info.append({
                 'unity_number': unity.number,
                 'slug': unity.slug,
-                'content': list_content_info
+                'content': list_content_info,
+                'name': unity.name
             })
         return menu_info
 # SAMPLE OF USAGE
