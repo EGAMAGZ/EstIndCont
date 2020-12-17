@@ -23,23 +23,7 @@ class Home(VisitContextMixin, ListView):
     context_object_name = 'last_posts'
     queryset = UnityContent.objects.order_by('-created')[:5]
 
-
-def handler404(request, exception) -> HttpResponse:
-    try:
-        if not request.session['page_visited_session']:
-            request.session['page_visited_session'] = True
-    except KeyError:
-        request.session['page_visited_session'] = False
-
-    return render(request,'core/404.html', {
-        'page_visited': request.session['page_visited_session']
-        # 'menu_elements': get_info_menu()
-        }, status=404)
-
-def handler500(request) -> HttpResponse:
-    return render(request, 'core/500.html', status=500)
-
-def get_info_menu(self) -> Iterable[Dict[str,str]]:
+def get_info_menu() -> Iterable[Dict[str,str]]:
     menu_info:List[Dict[str,str]] = []
     for unity in Unity.objects.all():
         list_content_info = []
@@ -55,3 +39,19 @@ def get_info_menu(self) -> Iterable[Dict[str,str]]:
             'name': unity.name
         })
     return menu_info
+
+
+def handler404(request) -> HttpResponse:
+    try:
+        if not request.session['page_visited_session']:
+            request.session['page_visited_session'] = True
+    except KeyError:
+        request.session['page_visited_session'] = False
+
+    return render(request,'core/404.html', {
+        'page_visited': request.session['page_visited_session'],
+        'menu_elements': get_info_menu()
+        }, status=404)
+
+def handler500(request) -> HttpResponse:
+    return render(request, 'core/500.html', status=500)
