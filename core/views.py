@@ -41,7 +41,7 @@ def get_info_menu() -> Iterable[Dict[str,str]]:
     return menu_info
 
 
-def handler404(request) -> HttpResponse:
+def handler404(request,exception) -> HttpResponse:
     try:
         if not request.session['page_visited_session']:
             request.session['page_visited_session'] = True
