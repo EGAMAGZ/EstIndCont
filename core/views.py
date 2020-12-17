@@ -32,8 +32,8 @@ def handler404(request, exception) -> HttpResponse:
         request.session['page_visited_session'] = False
 
     return render(request,'core/404.html', {
-        'page_visited': request.session['page_visited_session'],
-        'menu_elements': get_info_menu()
+        'page_visited': request.session['page_visited_session']
+        # 'menu_elements': get_info_menu()
         }, status=404)
 
 def handler500(request) -> HttpResponse:
