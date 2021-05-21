@@ -1,0 +1,74 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block path %}| Nosotros{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/teams.css' %}" />
+{% endblock %}
+
+{% block content %}
+<div class="team-container">
+    <div class="team-header">
+    </div>
+    <h1>Sobre Nosotros</h1>
+</div>
+
+<div class="business-info-container">
+    <div class="container">
+        <h1 class="business-info-title text-center mb-3 font-weight-bold">¿Que es KIAME?</h1>
+        <p class="business-info-text text-break text-center">KIAME es una empresa mexicana de base
+            tecnológica
+            especializada en el desarrollo e integración de soluciones de software, servicio cloud,
+            hosting, apps móviles, aplicaciones web. Fundada en 2020 con la experiencia obtenida ha
+            generado soluciones diseñadas y desarrolladas tanto para el uso de la administración pública
+            como para el servicio de la industria en plataforma digital. Nuestra compañía la integran
+            especialistas altamente capacitados y con estudios que avalan su desempeño profesional de
+            manera integral lo que garantiza una fuerza de trabajo colaborativa y dinámica. Realizamos
+            Apps para móviles nativos (iOs y Android) así como aplicaciones web para tiendas online.</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.380914851524!2d-99.09402488509387!3d19.395941086905164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1fc2e3efc321b%3A0xabf8454acb3a3a99!2sUPIICSA%20%E2%80%93%20Unidad%20Profesional%20Interdisciplinaria%20de%20Ingenier%C3%ADa%20y%20Ciencias%20Sociales%20y%20Administrativas%20IPN!5e0!3m2!1ses!2smx!4v1619235724944!5m2!1ses!2smx"
+            width="600" height="450" style="border:0; width: 100%;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+    <div class="col d-flex align-items-center justify-content-center">
+        <div>
+            <h1 class="font-weight-bold">¿Donde nos encontramos?</h1>
+            <p>Nosotros, KIAME, nos encontramos actualmente en <em>Av. Té 950, Granjas México, Iztacalco, 08400 Ciudad de México, CDMX</em></p>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <h1 class="text-center m-5 font-weight-bold">¿Quieres saber quienes somos?</h1>
+    <div class="row row-cols-1 row-cols-sm-1 row-cols-md-1 g-4">
+        {% for team_member in team_members %}
+        <div class="col mb-4">
+            <div class="card h-100 rounded">
+                <div class="row no-gutters">
+                    <div class="col-4">
+                        <img src="{{ team_member.profile_img.url }}"class="card-img" alt="...">
+                    </div>
+                    <div class="col-8">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ team_member.user.get_full_name }}</h5>
+                            <p class="card-text font-italic">"{{ team_member.description }}"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <h1>No hay miembros de Equipo</h1>
+
+        {% endfor %}
+
+    </div>
+</div>
+{% endblock %}

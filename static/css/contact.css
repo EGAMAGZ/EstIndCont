@@ -1,0 +1,53 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Lato";
+  src: url("../fonts/Lato-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Lato Black";
+  src: url("../fonts/Lato-Black.ttf") format("truetype");
+}
+.contact-header {
+  height: 30vh;
+  background-image: url("../img/SEPI.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-attachment: fixed;
+}
+
+.contact-container {
+  min-height: 60vh;
+}
+.contact-title {
+  font-family: "Lato", sans-serif;
+}
+.contact-info-container {
+  display: flex;
+  background-color: #803266;
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+}
+.contact-btn {
+  background-color: #803266;
+  color: #fff;
+}
+.contact-btn:hover {
+  background-color: #62264e;
+  color: #fff;
+}
+
+.contact-footer {
+  height: 10vh;
+  background-image: url("../img/SEPI.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-attachment: fixed;
+}
+
+/*# sourceMappingURL=contact.css.map */

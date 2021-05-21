@@ -1,1 +1,67 @@
-#team-header{height:80vh;background-image:url(../img/team_members.png);background-size:cover;background-repeat:no-repeat;clip-path:polygon(100% 0,100% 90%,69% 100%,0 85%,0 0);background-attachment:fixed;margin-bottom:50px}#page-content-container .card{max-width:540px;max-height:200px;margin-left:auto;margin-right:auto}#page-content-container .card-img{object-fit:cover;height:100%}
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Lato";
+  src: url("../fonts/Lato-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Lato Black";
+  src: url("../fonts/Lato-Black.ttf") format("truetype");
+}
+.team-container {
+  height: 80vh;
+  padding-bottom: 50px;
+  background-color: #803266;
+  position: relative;
+}
+.team-container h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  font-size: 6em;
+  font-family: "Lato Black", sans-serif;
+}
+.team-header {
+  height: 100%;
+  background-image: url("../img/pexels-fauxels-3183150.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  clip-path: polygon(100% 0, 100% 90%, 69% 100%, 0 85%, 0 0);
+  filter: contrast(0.75);
+}
+
+#page-content-container .card {
+  width: 100%;
+  box-sizing: content-box;
+  max-height: 300px;
+  border-left: 5px solid #803266;
+  margin-left: auto;
+  margin-right: auto;
+}
+#page-content-container .card-img {
+  object-fit: cover;
+  max-height: 300px;
+  border-radius: 0;
+}
+
+.business-info-container {
+  width: 100%;
+  background-color: #803266;
+  color: white;
+  padding-bottom: 3em;
+}
+.business-info-title {
+  font-family: "Lato", sans-serif;
+}
+.business-info-text {
+  font-size: "Roboto", sans-serif;
+}
+
+/*# sourceMappingURL=teams.css.map */

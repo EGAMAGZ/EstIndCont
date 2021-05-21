@@ -1,0 +1,35 @@
+.portafolio-header {
+  height: 20vh;
+}
+
+#page-content-container {
+  height: auto;
+  background-image: url("../img/servidores.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-attachment: fixed;
+}
+
+.container {
+  background-color: #fff;
+  border-radius: 0.7em 0.7em 0 0;
+  padding-top: 2em;
+}
+
+.card {
+  max-width: 800px;
+  box-sizing: content-box;
+  max-height: 45vh;
+  margin: 1em auto;
+}
+.card-img {
+  object-fit: cover;
+  max-height: 45vh;
+  border-radius: 0;
+}
+.card-img-overlay {
+  background: transparent linear-gradient(rgba(1, 1, 1, 0.6), rgba(1, 1, 1, 0.3));
+}
+
+/*# sourceMappingURL=portafolio.css.map */
