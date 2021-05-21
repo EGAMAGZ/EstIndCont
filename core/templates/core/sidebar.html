@@ -1,21 +1,38 @@
 <div id="sideBar" class="sidenav sidenav-hide">
     <ul>
         <li><button id="closeNav"><span class="mr-2">&times;</span>Cerrar</button></li>
-        {% for element in menu_elements %}
-            <li class="{% if element.content %}dropdown{% endif %}">
-                <a href="{% url 'unity-content-list' element.slug %}">Unidad Tematica {{ element.unity_number }}{% if element.content %}<span>&rsaquo;</span>{% endif %}</a>
+            <li>
+                <a href="{% url 'home' %}">Inicio</a>
+            </li>
+            <li>
+                <a href="{% url 'about-us' %}">Nosotros</a>
+            </li>
+            <li>
+                <a href="">Productos y Servicios</a>
+            </li>
+            <li>
+                <a href="">Cotizaciones</a>
+            </li>
+            <li>
+                <a href="">Clientes</a>
+            </li>
+            <li>
+                <a href="">Portafolio</a>
+            </li>
+            <li>
+                <a href="">Contacto</a>
+            </li>
+            <li class="dropdown">
+                <a href="">PROSOFT <span class="ml-1">&rsaquo;</span></a>
                 <ul>
-                    {% for content in element.content %}
-                    <li><a href="{{ content.url }}">{{ content.title }}</a></li>
-                    {% endfor %}
+                    <li>
+                        <a href="#">PROSOFT</a>
+                    </li>
+                    <li><a href="#">Documentación Soporte</a></li>
+                    <li><a href="#">Cronograma</a></li>
+                    <li><a href="#">Cotización</a></li>
+                    <li><a href="#">Gobierno como cliente</a></li>
                 </ul>
             </li>
-        {% endfor %}
-        <li>
-            <a href="{% url 'team-members' %}">Integrantes de Equipo</a>
-        </li>
-        <li>
-            <a href="{% url 'home' %}">Regresar al Inicio</a>
-        </li>
     </ul>
 </div>

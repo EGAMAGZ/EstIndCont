@@ -4,9 +4,8 @@ from django.contrib.auth.models import User
 # Create your models here.
 class TeamMember(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    id_number = models.CharField('Boleta', unique=True, max_length=10)
     profile_img = models.ImageField('Foto de Perfil', upload_to='profile-img')
-    role=models.CharField('Cargo', max_length=30)
+    description = models.TextField('Descripción', blank=True, null=True, default='No ha dado descripcion')
 
     class Meta:
         verbose_name='Miembro de Equipo'
