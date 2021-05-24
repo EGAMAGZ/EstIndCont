@@ -1,0 +1,43 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block path %}| Portafolio{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/portafolio.css' %}" />
+{% endblock %}
+
+{% block content %}
+<div class="portafolio-header"></div>
+
+<div class="container">
+    <h1 class="text-center">¿Quieres saber donde hemos participado?</h1>
+
+    <div class="card bg-dark text-white">
+        <img src="{% static 'img/quetzilabs.PNG' %}" class="card-img" alt="...">
+        <div class="card-img-overlay">
+            <h4 class="card-title">QuetziLabs <em>"Controla, Administra y Trabaja en Equipo"</em></h4>
+            <h5 class="card-text">Objetivo</h5>
+            <p class="card-text">Proporcionar a desarroladores de la República Mexicana un medio por el
+                cual estos puedan adquirir trabajos freelancers, al igual que permitir a empresas
+                contratar freelancers, controlar y administrar su equipo.</p>
+        </div>
+    </div>
+
+    <div class="card bg-dark text-white">
+        <img src="{% static 'img/batitienda.png' %}" class="card-img" alt="...">
+        <div class="card-img-overlay">
+            <h4 class="card-title">Batitienda <em>"Material para todos sin importar el dinero en el
+                    bosillo"</em></h4>
+            <h5 class="card-text">Objetivo</h5>
+            <p class="card-text">Proporcionar a los estudiantes de la República Mexicana un medio por el
+                cual estos puedan adquirir los diversos materiales solicitados en las diferentes
+                unidades de aprendizaje impartidas dentro del plantel a un precio mucho más asequible,
+                preservando así su economia.</p>
+        </div>
+    </div>
+
+
+</div>
+{% endblock %}

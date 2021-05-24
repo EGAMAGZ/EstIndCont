@@ -1,5 +1,10 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.utils.text import slugify
+from django.urls import reverse
+
+from .validators import validate_file_extension
+
 
 # Create your models here.
 class TeamMember(models.Model):
@@ -14,3 +19,27 @@ class TeamMember(models.Model):
 
     def __str__(self):
         return self.user.get_full_name()
+
+class ProsoftDoc(models.Model):
+    title = models.CharField('Titulo', max_length=120)
+    document = models.FileField(upload_to='prosoft/', validators=[validate_file_extension])
+    slug = models.SlugField('Slug', blank=True, unique=True)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = 'Documento de Prosoft'
+        verbose_name_plural = 'Documentos de Prosoft'
+        ordering = ['-created','title']
+
+    def save(self, *args, **kwargs) -> None:
+        self.slug = slugify(self.title)
+
+        super().save(*args, **kwargs)
+
+    def get_absolute_url(self) -> str:
+        # return reverse('prosoft-doc', kwargs={'document-slug': self.slug})
+        return '#'
+
+    def __str__(self) -> str:
+        return self.title
