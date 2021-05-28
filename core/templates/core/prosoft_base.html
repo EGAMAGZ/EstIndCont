@@ -1,0 +1,38 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/prosoft.css' %}" />
+{% endblock %}
+
+{% block content %}
+<div class="prosoft-header">
+    <div>
+        <h1>PROSOFT
+        </h1>
+        <small>DOCUMENTACIÓN PARA PROSOFT</small>
+
+    </div>
+</div>
+
+<div class="container {% if request.path != '/prosoft/' %}mb-5{% endif %}">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item {% if request.path != '/prosoft/' %}active{% endif %}">
+                {% if request.path != '/prosoft/' %}
+                <a href="{% url 'prosoft' %}">PROSOFT</a>
+                {% else %}
+                PROSOFT
+                {% endif %}
+
+            </li>
+            {% if request.path != '/prosoft/' %} <li class="breadcrumb-item active" aria-current="page">{{ document.title }}</li> {% endif %}
+        </ol>
+    </nav>
+    {% block prosoft_container %}
+    {% endblock %}
+</div>
+
+
+{% endblock %}

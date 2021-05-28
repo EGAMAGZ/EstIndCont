@@ -1,11 +1,14 @@
-from core.form import ContactForm
 from django.http.response import HttpResponse
 from django.views.generic.base import TemplateView
 from django.views.generic.list import ListView
 from django.views.generic.edit import FormView
+from django.views.generic.detail import DetailView
 from django.shortcuts import render
 from django.contrib import messages
+from django.views.decorators.clickjacking import xframe_options_exempt, xframe_options_sameorigin
+from django.utils.decorators import method_decorator
 
+from core.form import ContactForm
 from core.models import ProsoftDoc, TeamMember
 from util.mixins import VisitContextMixin
 
@@ -25,6 +28,22 @@ class HomeView(VisitContextMixin, ListView):
 
 class PortafolioView(VisitContextMixin, TemplateView):
     template_name = 'core/portafolio.html'
+
+
+class ProsoftListView(VisitContextMixin, ListView):
+    template_name = "core/prosoft_list.html"
+    model = ProsoftDoc
+    context_object_name = "documents"
+    queryset = ProsoftDoc.objects.all()
+
+
+@method_decorator(xframe_options_exempt, name='dispatch')
+class ProsoftDocView(VisitContextMixin, DetailView):
+    template_name = 'core/prosoft_doc.html'
+    context_object_name = 'document'
+    model = ProsoftDoc
+    slug_url_kwarg = 'document_slug'
+
 
 class ContactView(VisitContextMixin, FormView):
     template_name = 'core/contact.html'
