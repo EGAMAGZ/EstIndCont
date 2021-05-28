@@ -1,5 +1,5 @@
 from core.models import ProsoftDoc
-from typing import Final, Any
+from typing import Final, Any, Dict, List
 
 
 class VisitContextMixin(object):
@@ -8,8 +8,8 @@ class VisitContextMixin(object):
     __VISITED_SESSION: Final = 'page_visited_session'
     __MENU_INFO_CONTEXT: Final = 'menu_elements'
     
-    def _get_info_menu(self) -> dict[str, str]:
-        menu_info: list[dict[str, str]] = []
+    def _get_info_menu(self) -> List[Dict[str, str]]:
+        menu_info: List[Dict[str, str]] = []
 
         for document in ProsoftDoc.objects.all():
 
