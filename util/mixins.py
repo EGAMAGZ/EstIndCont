@@ -1,12 +1,26 @@
-from typing import Dict, Final, Any
+from core.models import ProsoftDoc
+from typing import Final, Any
 
 
 class VisitContextMixin(object):
 
     __VISITED_CONTEXT: Final = 'page_visited'
     __VISITED_SESSION: Final = 'page_visited_session'
+    __MENU_INFO_CONTEXT: Final = 'menu_elements'
+    
+    def _get_info_menu(self) -> dict[str, str]:
+        menu_info: list[dict[str, str]] = []
 
-    def get_context_data(self, *, object_list=None, **kwargs: Any) -> Dict[str, Any]:
+        for document in ProsoftDoc.objects.all():
+
+            menu_info.append({
+                'title': document.title,
+                'url': document.get_absolute_url()
+            })
+
+        return menu_info
+
+    def get_context_data(self, *, object_list=None, **kwargs: Any) -> dict[str, Any]:
         context = super(VisitContextMixin, self).get_context_data(object_list=object_list, **kwargs)
 
         try:
@@ -17,6 +31,7 @@ class VisitContextMixin(object):
             self.request.session[self.__VISITED_SESSION] = False
 
         context[self.__VISITED_CONTEXT] = self.request.session[self.__VISITED_SESSION]
+        context[self.__MENU_INFO_CONTEXT] = self._get_info_menu()
 
         return context
 
