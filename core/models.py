@@ -20,6 +20,7 @@ class TeamMember(models.Model):
     def __str__(self):
         return self.user.get_full_name()
 
+
 class ProsoftDoc(models.Model):
     title = models.CharField('Titulo', max_length=120)
     document = models.FileField(upload_to='prosoft/', validators=[validate_file_extension])
@@ -37,9 +38,8 @@ class ProsoftDoc(models.Model):
 
         super().save(*args, **kwargs)
 
-    def get_absolute_url(self) -> str:
-        # return reverse('prosoft-doc', kwargs={'document-slug': self.slug})
-        return '#'
+    def get_absolute_url(self):
+        return reverse('prosoft-doc', kwargs={'document_slug': self.slug})
 
     def __str__(self) -> str:
         return self.title

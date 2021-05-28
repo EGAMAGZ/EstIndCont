@@ -1,0 +1,18 @@
+{% extends 'core/prosoft_base.html' %}
+
+{% load static %}
+
+{% block path %}| {{ document.title }}{% endblock %}
+
+{% block prosoft_container %}
+<div class="d-flex align-content-center">
+    <h1>{{ document.title }}</h1>
+</div>
+<div class="document-container">
+    
+    <embed src="{{ document.document.url }}" width="500" height="375" type="application/pdf">
+
+</div>
+<a href="{{ document.document.url }}" class="btn btn-secondary btn-lg btn-block rounded-0" download="ejemplo.pdf">Descargar</a>
+
+{% endblock %}

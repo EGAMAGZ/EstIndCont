@@ -1,0 +1,22 @@
+{% extends 'core/prosoft_base.html' %}
+
+{% load static %}
+
+{% block path %}| PROSOFT{% endblock %}
+
+{% block prosoft_container %}
+<div class="row">
+    {% for document in documents %}
+    <div class="col-sm-6 mb-2 rounded">
+        <a href="{{ document.get_absolute_url }}" class="list-group-item list-group-item-action flex-column align-items-start">
+            <span><img src="{% static 'img/file_present.svg' %}" class="mr-1" />{{ document.title }}</span>
+        </a>
+    </div>
+    {% empty %}
+
+    <h1>No se han agregado documentos</h1>
+
+    {% endfor %}
+</div>
+
+{% endblock %}

@@ -152,3 +152,5 @@ MEDIA_ROOT = '/home/gazap/KIAME/media/'
 
 CKEDITOR_ALLOW_NONIMAGE_FILES = False
 CKEDITOR_UPLOAD_PATH = 'ckeditor_uploads/'
+
+X_FRAME_OPTIONS = 'ALLOWALL'
