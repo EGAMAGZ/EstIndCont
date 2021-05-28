@@ -20,7 +20,7 @@ class VisitContextMixin(object):
 
         return menu_info
 
-    def get_context_data(self, *, object_list=None, **kwargs: Any) -> dict[str, Any]:
+    def get_context_data(self, *, object_list=None, **kwargs: Any) -> Dict[str, Any]:
         context = super(VisitContextMixin, self).get_context_data(object_list=object_list, **kwargs)
 
         try:
