@@ -180,7 +180,6 @@ footer {
   position: relative;
   margin-top: 10px;
 }
-
 footer::before {
   content: "";
   position: absolute;
@@ -188,6 +187,15 @@ footer::before {
   height: 10px;
   background: transparent linear-gradient(-90deg, #db3149 0%, #803266 45%, #483843 62%, #131615 100%) 0% 0% no-repeat padding-box;
   top: -10px;
+}
+
+.social-media {
+  font-size: 36px;
+  color: #fff;
+  cursor: pointer;
+}
+.social-media:hover {
+  color: #c8c8c8;
 }
 
 @keyframes bounce {
