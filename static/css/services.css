@@ -1,10 +1,57 @@
-.services-header {
-  height: 30vh;
-  background-image: url("../img/SEPI.jpg");
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Lato";
+  src: url("../fonts/Lato-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Lato Black";
+  src: url("../fonts/Lato-Black.ttf") format("truetype");
+}
+.service-container {
+  min-height: 70vh;
+}
+.service-img {
+  height: auto;
+  background-image: url("../img/pexels-brett-sayles-1624895.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: bottom;
+  background-position: left;
   background-attachment: fixed;
+}
+.service-list-icon {
+  font-size: 36px;
+}
+.service-list-item {
+  font-family: "Roboto", sans-serif;
+}
+.service-list-title {
+  font-family: "Lato Black", sans-serif;
+  text-align: center;
+}
+.service-contact-title {
+  font-family: "Lato", sans-serif;
+}
+.service-contact-container {
+  height: auto;
+  background-image: url("../img/pexels-brett-sayles-1624895.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left;
+  background-attachment: fixed;
+}
+.service-contact-btn {
+  background-color: #803266;
+  color: #fff;
+}
+.service-contact-btn:hover {
+  background-color: #62264e;
+  color: #fff;
+}
+.service-contact-form {
+  background-color: #fff;
 }
 
 /*# sourceMappingURL=services.css.map */

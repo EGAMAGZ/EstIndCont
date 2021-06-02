@@ -55,7 +55,21 @@ class ContactView(VisitContextMixin, FormView):
         messages.success(self.request, 'Mensaje de contacto correctamente creado')
 
         return self.render_to_response(
-            self.get_context_data(request=self.request, form=form))
+            self.get_context_data(request=self.request, form=form)
+        )
+
+class ServicesView(VisitContextMixin, FormView):
+    template_name = 'core/services.html'
+    form_class = ContactForm
+    success_url = '/services/'
+    
+    def form_valid(self, form: ContactForm) -> HttpResponse:
+
+        messages.success(self.request, 'Mensaje de contacto correctamente creado')
+
+        return self.render_to_response(
+            self.get_context_data(request=self.request, form=form)
+        )
 
 
 def handler404(request, exception) -> HttpResponse:
