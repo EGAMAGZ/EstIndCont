@@ -10,6 +10,10 @@
   font-family: "Lato Black";
   src: url("../fonts/Lato-Black.ttf") format("truetype");
 }
+* {
+  box-sizing: border-box;
+}
+
 .team-container {
   height: 80vh;
   padding-bottom: 50px;
@@ -62,6 +66,60 @@
 }
 .business-info-text {
   font-size: "Roboto", sans-serif;
+}
+
+.client-title {
+  font-size: 30px;
+  font-weight: 500;
+  text-align: center;
+  position: relative;
+  margin-bottom: 60px;
+}
+.client-title:after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 4px;
+  background-color: #803266;
+  bottom: -20px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+.client-container {
+  max-width: 1040px;
+  margin: 100px auto;
+}
+.client-slider-img {
+  width: 100%;
+  max-height: 100%;
+}
+.client-slider-item {
+  background-color: #fff;
+  box-shadow: 0 4px 5 px #cacaca;
+  border-radius: 8px;
+  padding: 15px;
+  border: 2px solid #111;
+  height: 200px;
+}
+.client-slider-item:hover {
+  display: block;
+  transition: all ease 0.3s;
+  transform: scale(1.1) translateY(-5px);
+}
+.client-slider .slick-slide {
+  margin: 15px;
+}
+.client-slider .slick-dots li.slick-active button::before {
+  color: #803266;
+}
+.client-slider .slick-dots li button:before {
+  font-size: 12px;
+}
+.client-slider .slick-next::before,
+.client-slider .slick-prev::before {
+  color: #803266;
+  font-size: 24px;
 }
 
 /*# sourceMappingURL=teams.css.map */

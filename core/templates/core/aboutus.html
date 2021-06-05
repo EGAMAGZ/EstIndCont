@@ -5,6 +5,9 @@
 {% block path %}| Nosotros{% endblock %}
 
 {% block css %}
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" />
+<link rel="stylesheet" type="text/css"
+href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" />
 <link rel="stylesheet" href="{% static 'css/teams.css' %}" />
 {% endblock %}
 
@@ -39,7 +42,8 @@
     <div class="col d-flex align-items-center justify-content-center">
         <div>
             <h1 class="font-weight-bold">¿Donde nos encontramos?</h1>
-            <p>Nosotros, KIAME, nos encontramos actualmente en <em>Av. Té 950, Granjas México, Iztacalco, 08400 Ciudad de México, CDMX</em></p>
+            <p>Nosotros, KIAME, nos encontramos actualmente en <em>Av. Té 950, Granjas México, Iztacalco, 08400 Ciudad
+                    de México, CDMX</em></p>
         </div>
     </div>
 </div>
@@ -53,7 +57,7 @@
             <div class="card h-100 rounded">
                 <div class="row no-gutters">
                     <div class="col-4">
-                        <img src="{{ team_member.profile_img.url }}"class="card-img" alt="...">
+                        <img src="{{ team_member.profile_img.url }}" class="card-img" alt="...">
                     </div>
                     <div class="col-8">
                         <div class="card-body">
@@ -71,4 +75,30 @@
 
     </div>
 </div>
+
+<div class="client-container" id="clients">
+    <h1 class="client-title">Nuestros Clientes</h1>
+    <div class="client-slider">
+        <div class="client-slider-item">
+            <a href="#"> <img src="{% static 'img/batiz.jpg' %}" class="client-slider-img" alt=""> </a>
+        </div>
+        <div class="client-slider-item">
+            <a href="#"> <img src="{% static 'img/drpepper.png' %}" class="client-slider-img" alt=""> </a>
+        </div>
+        <div class="client-slider-item">
+            <a href="#"> <img src="{% static 'img/google.png' %}" class="client-slider-img" alt=""> </a>
+        </div>
+        <div class="client-slider-item">
+            <a href="#"> <img src="{% static 'img/ibm.png' %}" class="client-slider-img" alt=""> </a>
+        </div>
+        <div class="client-slider-item">
+            <a href="#"> <img src="{% static 'img/microsoft.jpg' %}" class="client-slider-img" alt=""> </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block js_script %}
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script src="{% static 'js/aboutus.js' %}"></script>
 {% endblock %}
