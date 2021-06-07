@@ -1,10 +1,11 @@
+from django.core.exceptions import FieldError, ValidationError
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils.text import slugify
 from django.urls import reverse
 
 from .validators import validate_file_extension
-
+from util import SingletonModel
 
 # Create your models here.
 class TeamMember(models.Model):
@@ -43,3 +44,13 @@ class ProsoftDoc(models.Model):
 
     def __str__(self) -> str:
         return self.title
+
+class MarketRate(SingletonModel):
+    document = models.FileField('Documento',upload_to='market_rate/', validators=[validate_file_extension], blank=True)
+
+    class Meta:
+        verbose_name = "Cotización"
+        verbose_name_plural = 'Cotizaciones'
+
+    def __str__(self) -> str:
+        return "Documento de Cotización"

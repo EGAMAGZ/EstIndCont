@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import TeamMember, ProsoftDoc
+from .models import TeamMember, ProsoftDoc, MarketRate
 
 # Register your models here
 @admin.register(ProsoftDoc)
@@ -10,3 +10,4 @@ class ProsoftDocAdmin(admin.ModelAdmin):
 
 # Register your models here.
 admin.site.register(TeamMember)
+admin.site.register(MarketRate)
