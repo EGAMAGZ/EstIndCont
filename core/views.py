@@ -72,13 +72,6 @@ class ServicesView(VisitContextMixin, FormView):
         )
 
 
-@method_decorator(xframe_options_exempt, name='dispatch')
-class MarketRateView(VisitContextMixin, DetailView):
-    model = MarketRate
-    queryset = MarketRate.load()
-    template_name = 'core/market_rate.html'
-    context_object_name = 'document'
-
 @xframe_options_exempt
 def market_rate(request):
     return render(request, 'core/market_rate.html', {'document': MarketRate.load()})
