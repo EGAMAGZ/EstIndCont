@@ -1,5 +1,5 @@
 from django.http.response import HttpResponse
-from django.views.generic.base import TemplateView
+from django.views.generic.base import TemplateView, View
 from django.views.generic.list import ListView
 from django.views.generic.edit import FormView
 from django.views.generic.detail import DetailView
@@ -71,10 +71,15 @@ class ServicesView(VisitContextMixin, FormView):
             self.get_context_data(request=self.request, form=form)
         )
 
+@method_decorator(xframe_options_exempt, name='dispatch')
+class MarketRateView(VisitContextMixin, TemplateView):
+    template_name = 'core/market_rate.html'
 
-@xframe_options_exempt
-def market_rate(request):
-    return render(request, 'core/market_rate.html', {'document': MarketRate.load()})
+    def get_context_data(self,*args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context['document'] = MarketRate.load()
+        return context
+
 
 def handler404(request, exception) -> HttpResponse:
     return render(request,'core/404.html', status=404)
