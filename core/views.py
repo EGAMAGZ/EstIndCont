@@ -9,7 +9,7 @@ from django.views.decorators.clickjacking import xframe_options_exempt, xframe_o
 from django.utils.decorators import method_decorator
 
 from core.form import ContactForm
-from core.models import MarketRate, ProsoftDoc, TeamMember
+from core.models import ConstitucionalAct, ProsoftDoc, TeamMember
 from util.mixins import VisitContextMixin
 
 # Create your views here.
@@ -18,6 +18,12 @@ class AboutUsView(VisitContextMixin,ListView):
     model = TeamMember
     template_name = 'core/aboutus.html'
     context_object_name = 'team_members'
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context['document'] = ConstitucionalAct.load()
+
+        return context
 
 class HomeView(VisitContextMixin, ListView):
     model = ProsoftDoc
@@ -58,11 +64,15 @@ class ContactView(VisitContextMixin, FormView):
             self.get_context_data(request=self.request, form=form)
         )
 
-class ServicesView(VisitContextMixin, FormView):
+class ServicesView(VisitContextMixin, TemplateView):
     template_name = 'core/services.html'
+
+
+class MarketRateView(VisitContextMixin, FormView):
+    template_name = 'core/market_rate.html'
     form_class = ContactForm
-    success_url = '/services/'
-    
+    success_url = '/market-rates/'
+
     def form_valid(self, form: ContactForm) -> HttpResponse:
 
         messages.success(self.request, 'Mensaje de contacto correctamente creado')
@@ -70,15 +80,6 @@ class ServicesView(VisitContextMixin, FormView):
         return self.render_to_response(
             self.get_context_data(request=self.request, form=form)
         )
-
-@method_decorator(xframe_options_exempt, name='dispatch')
-class MarketRateView(VisitContextMixin, TemplateView):
-    template_name = 'core/market_rate.html'
-
-    def get_context_data(self,*args, **kwargs):
-        context = super().get_context_data(*args, **kwargs)
-        context['document'] = MarketRate.load()
-        return context
 
 
 def handler404(request, exception) -> HttpResponse:

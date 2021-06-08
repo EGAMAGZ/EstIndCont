@@ -45,12 +45,14 @@ class ProsoftDoc(models.Model):
     def __str__(self) -> str:
         return self.title
 
-class MarketRate(SingletonModel):
+
+class ConstitucionalAct(SingletonModel):
     document = models.FileField('Documento',upload_to='market_rate/', validators=[validate_file_extension], blank=True)
+    updated = models.DateTimeField('Modificado', auto_now=True)
 
     class Meta:
-        verbose_name = "Cotización"
-        verbose_name_plural = 'Cotizaciones'
+        verbose_name = "Acta Constitucional"
+        verbose_name_plural = "Actas Constitucional"
 
     def __str__(self) -> str:
-        return "Documento de Cotización"
+        return "Documento de Acta Constitucional"
