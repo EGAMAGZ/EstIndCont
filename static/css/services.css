@@ -11,7 +11,7 @@
   src: url("../fonts/Lato-Black.ttf") format("truetype");
 }
 .service-container {
-  min-height: 70vh;
+  height: 100vh;
 }
 .service-img {
   height: auto;

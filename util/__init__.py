@@ -15,5 +15,4 @@ class SingletonModel(models.Model):
     @classmethod
     def load(cls):
         obj, created = cls.objects.get_or_create(pk=1)
-        print(obj)
         return obj

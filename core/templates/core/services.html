@@ -10,17 +10,6 @@
 
 {% block content %}
 
-{% if messages %}
-{% for message in messages %}
-<div class="alert alert-{{ message.tags }} alert-dismissible fade show w-100" role="alert">
-    {{ message }}
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-    </button>
-</div>
-{% endfor %}
-{% endif %}
-
 <div class="row service-container">
     <div class="col-3 service-img"></div>
     <div class="col-9 container pt-4">
@@ -65,52 +54,6 @@
         </div>
     </div>
 
-</div>
-
-<div class="w-100 py-5">
-
-    <h1 class="text-center contact-title">¿Quieres contactarnos?</h1>
-    <p class="text-center">Nosotros, KIAME, nos encontramos actualmente en <em>Av. Té 950, Granjas México,
-            Iztacalco, 08400 Ciudad de México, CDMX</em></p>
-</div>
-
-<div class="service-contact-container">
-    <div class="container py-5 service-contact-form d-flex justify-content-center">
-        <form class="px-2 w-75" action="{% url 'services' %}" method="POST">
-            <div class="form-group">
-                <label for="{{ form.name.id_for_label }}">{{ form.name.label_tag }}</label>
-                {{ form.name }}
-            </div>
-            <div class="form-group">
-                <label for="{{ form.email.id_for_label }}">{{ form.email.label_tag }}</label>
-                {{ form.email }}
-            </div>
-            <div class="form-group">
-                <label for="{{ form.number.id_for_label }}">{{ form.number.label_tag }}</label>
-                {{ form.number }}
-            </div>
-            <div class="form-group">
-                <label for="{{ form.business.id_for_label }}">{{ form.business.label_tag }}</label>
-                {{ form.business }}
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="{{ form.city.id_for_label}}">{{ form.city.label_tag }}</label>
-                    {{ form.city }}
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="{{ form.country.id_for_label }}">{{ form.country.label_tag }}</label>
-                    {{ form.country }}
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="{{ form.message.id_for_label }}">{{ form.message.label_tag }}</label>
-                {{ form.message }}
-            </div>
-            <button type="submit" class="btn service-contact-btn btn-lg btn-block">Enviar</button>
-            {% csrf_token %}
-        </form>
-    </div>
 </div>
 
 {% endblock %}
