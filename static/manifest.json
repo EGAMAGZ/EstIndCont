@@ -1,0 +1,18 @@
+{
+    "short_name": "KIAME",
+    "name": "KIAME Pagina Web",
+    "description": "Pagina del Equipo KIAME",
+    "background_color": "#db3149",
+    "theme_color": "#db3149",
+    "orientation": "portrait",
+    "lang": "es",
+    "scope": "/",
+    "start_url": "/",
+    "icons": [
+        {
+            "src": "img/LOGO_KIAME.svg",
+            "sizes": "72x72"
+        }
+    ],
+    "display": "fullscreen"
+}
