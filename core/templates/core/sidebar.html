@@ -16,6 +16,11 @@
                     <a href="#">No hay documentos</a>
                 </li>
                 {% endfor %}
+                {% if menu_elements %}
+                <li>
+                    <a href="{% url 'prosoft' %}">Ver todos los documentos</a>
+                </li>
+                {% endif %}
             </ul>
         </li>
         <li>

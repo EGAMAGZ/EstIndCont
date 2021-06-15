@@ -32,7 +32,7 @@ class ProsoftDoc(models.Model):
     class Meta:
         verbose_name = 'Documento de Prosoft'
         verbose_name_plural = 'Documentos de Prosoft'
-        ordering = ['-created','title']
+        ordering = ['created',]
 
     def save(self, *args, **kwargs) -> None:
         self.slug = slugify(self.title)
