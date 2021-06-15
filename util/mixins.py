@@ -11,7 +11,7 @@ class VisitContextMixin(object):
     def _get_info_menu(self) -> List[Dict[str, str]]:
         menu_info: List[Dict[str, str]] = []
 
-        for document in ProsoftDoc.objects.all():
+        for document in ProsoftDoc.objects.order_by('created')[:5]:
 
             menu_info.append({
                 'title': document.title,

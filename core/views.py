@@ -40,7 +40,7 @@ class ProsoftListView(VisitContextMixin, ListView):
     template_name = "core/prosoft_list.html"
     model = ProsoftDoc
     context_object_name = "documents"
-    queryset = ProsoftDoc.objects.all()
+    queryset = ProsoftDoc.objects.order_by('created')
 
 
 @method_decorator(xframe_options_exempt, name='dispatch')
