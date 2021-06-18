@@ -56,3 +56,14 @@ class ConstitucionalAct(SingletonModel):
 
     def __str__(self) -> str:
         return "Documento de Acta Constitucional"
+
+class Description(SingletonModel):
+    document = models.FileField('Documento',upload_to='description/', validators=[validate_file_extension], blank=True)
+    updated = models.DateTimeField('Modificado', auto_now=True)
+
+    class Meta:
+        verbose_name = "Descripción de Proyecto"
+        verbose_name_plural = "Descripcion de Proyecto"
+
+    def __str__(self) -> str:
+        return "Documento de Discripciónd el Proyecto"
