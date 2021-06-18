@@ -9,7 +9,7 @@ from django.views.decorators.clickjacking import xframe_options_exempt, xframe_o
 from django.utils.decorators import method_decorator
 
 from core.form import ContactForm
-from core.models import ConstitucionalAct, ProsoftDoc, TeamMember
+from core.models import ConstitucionalAct, Description, ProsoftDoc, TeamMember
 from util.mixins import VisitContextMixin
 
 # Create your views here.
@@ -81,6 +81,14 @@ class MarketRateView(VisitContextMixin, FormView):
             self.get_context_data(request=self.request, form=form)
         )
 
+class DescriptionView(VisitContextMixin, TemplateView):
+    template_name = 'core/description.html'
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context['document'] = Description.load()
+
+        return context
 
 def handler404(request, exception) -> HttpResponse:
     return render(request,'core/404.html', status=404)
