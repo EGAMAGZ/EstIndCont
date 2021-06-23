@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import ConstitucionalAct, TeamMember, ProsoftDoc, Description
+from .models import ConstitucionalAct, Sales, TeamMember, ProsoftDoc, Description
 
 # Register your models here
 @admin.register(ProsoftDoc)
@@ -15,6 +15,10 @@ class ConstitucionalActAdmin( admin.ModelAdmin):
 
 @admin.register(Description)
 class DescriptionAdmin(admin.ModelAdmin):
+    readonly_fields = ('updated',)
+
+@admin.register(Sales)
+class SalesAdmin(admin.ModelAdmin):
     readonly_fields = ('updated',)
 
 # Register your models here.
