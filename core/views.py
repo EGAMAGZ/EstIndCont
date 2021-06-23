@@ -9,7 +9,7 @@ from django.views.decorators.clickjacking import xframe_options_exempt, xframe_o
 from django.utils.decorators import method_decorator
 
 from core.form import ContactForm
-from core.models import ConstitucionalAct, Description, ProsoftDoc, TeamMember
+from core.models import ConstitucionalAct, Description, ProsoftDoc, Sales, TeamMember
 from util.mixins import VisitContextMixin
 
 # Create your views here.
@@ -87,6 +87,15 @@ class DescriptionView(VisitContextMixin, TemplateView):
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
         context['document'] = Description.load()
+
+        return context
+
+class SalesGobView(VisitContextMixin, TemplateView):
+    template_name = 'core/vender.html'
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context['document'] = Sales.load()
 
         return context
 

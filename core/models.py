@@ -67,3 +67,14 @@ class Description(SingletonModel):
 
     def __str__(self) -> str:
         return "Documento de Discripciónd el Proyecto"
+
+class Sales(SingletonModel):
+    document = models.FileField('Documento',upload_to='venta/', validators=[validate_file_extension], blank=True)
+    updated = models.DateTimeField('Modificado', auto_now=True)
+
+    class Meta:
+        verbose_name = "Venta al Gobierno"
+        verbose_name_plural = "Ventas al Gobierno"
+
+    def __str__(self) -> str:
+        return "Documento de Venta al Gobierno"
